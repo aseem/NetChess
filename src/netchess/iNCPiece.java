@@ -1,8 +1,6 @@
 package netchess;
 
-import java.util.ArrayList;
-
-public interface iPiece 
+public interface iNCPiece 
 {
 	/* Change the type of piece */
 	public void setType(NCPieceType type);
@@ -19,6 +17,9 @@ public interface iPiece
 	/* Get the current position of the piece on the board */
 	public String getPosition();
 	
+	/* Moves the piece to specified location on the board */
+	public void move(NCPosition newPos, NCBoard board);
+	
 	/* Get a list of possible positions the piece can move to */
-	public ArrayList<String> getPossibleMoves();
+	public boolean isValidMove(NCPosition pos);
 }

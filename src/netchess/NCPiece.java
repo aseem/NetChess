@@ -1,16 +1,15 @@
 package netchess;
 
-import java.util.ArrayList;
-
-public abstract class NCPiece implements iPiece
+public abstract class NCPiece implements iNCPiece
 {
 	private NCColor myColor;
 	private NCPieceType myType;
 	private String myPos;
 	
-	public NCPiece(NCColor color)
+	public NCPiece(NCColor color, String pos)
 	{
 		this.myColor = color;
+		this.myPos = pos;
 	}
 	
 	public NCPieceType getType()
@@ -35,5 +34,8 @@ public abstract class NCPiece implements iPiece
 	}
 	
 	// implemented by subclass
-	public abstract ArrayList<String> getPossibleMoves();
+	public abstract void move(NCPosition newPos, NCBoard board);
+	
+	// implemented by subclass
+	public abstract boolean isValidMove(NCPosition pos);
 }
