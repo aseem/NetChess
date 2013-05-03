@@ -1,4 +1,4 @@
-package netchess;
+package netchess.pieces;
 
 public enum NCColor 
 {

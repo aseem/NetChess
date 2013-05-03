@@ -8,11 +8,17 @@ public class NCBoard
 	public NCBoard()
 	{
 		this.myBoard = new NCPosition[DEFAULT_SIZE][DEFAULT_SIZE];
+		this.init();
 	}
 	
-	public void init()
+	private void init()
 	{
+		int i = 0;
+		int j = 0;
 		
+		for (i = 0; i < DEFAULT_SIZE; i++)
+			for (i = 0; i < DEFAULT_SIZE; i++)
+				myBoard[i][j] = new NCPosition(i,j);
 	}
 	
 	public NCPosition getPosition(String pos)
@@ -20,7 +26,7 @@ public class NCBoard
 		return null;
 	}
 	
-	public NCPosition getPosition(int x, int y)
+	public NCPosition getPosition(int row, int col)
 	{
 		return null;
 	}
