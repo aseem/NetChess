@@ -1,7 +1,7 @@
 package netchess.pieces;
 
-import netchess.NCBoard;
 import netchess.NCPosition;
+import netchess.board.NCBoard;
 
 public class NCQueen extends NCPiece
 {

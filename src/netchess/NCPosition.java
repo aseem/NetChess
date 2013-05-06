@@ -97,7 +97,7 @@ public class NCPosition
 	
 	public String toString()
 	{
-		return this.myPos;
+		return (this.myPos + "- " + this.myPiece.toString());
 	}
 	
 }
