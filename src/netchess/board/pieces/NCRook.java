@@ -1,18 +1,20 @@
-package netchess.pieces;
+package netchess.board.pieces;
 
-import netchess.NCPosition;
 import netchess.board.NCBoard;
+import netchess.board.NCColor;
+import netchess.board.NCSpace;
+
 
 public class NCRook extends NCPiece
 {
-	public NCRook(NCColor color, NCPosition pos)
+	public NCRook(NCColor color, NCSpace pos)
 	{
 		super(color, pos);
 		this.myType = NCPieceType.ROOK;
 	}
 	
 	@Override
-	public boolean isValidMove(NCPosition pos, NCBoard board)
+	public boolean isValidMove(NCSpace pos, NCBoard board)
 	{
 		return true;
 	}

@@ -1,8 +1,18 @@
-package netchess;
+package netchess.player;
 
 import java.util.ArrayList;
 
 import netchess.board.NCBoard;
+import netchess.board.NCColor;
+import netchess.board.NCPosition;
+import netchess.board.pieces.NCBishop;
+import netchess.board.pieces.NCKing;
+import netchess.board.pieces.NCKnight;
+import netchess.board.pieces.NCPawn;
+import netchess.board.pieces.NCPieceType;
+import netchess.board.pieces.NCQueen;
+import netchess.board.pieces.NCRook;
+import netchess.board.pieces.iNCPiece;
 import netchess.pieces.*;
 
 public class NCPlayer 

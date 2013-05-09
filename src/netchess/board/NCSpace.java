@@ -1,13 +1,17 @@
-package netchess;
+package netchess.board;
 
-import netchess.pieces.iNCPiece;
+import netchess.board.pieces.iNCPiece;
 
-public class NCPosition 
+
+public class NCSpace
 {
 	private boolean isFree;
+	private int myRow;
+	private int myCol;
 	private String myPos;
 	private iNCPiece myPiece;
 	
+	/* static method to convert coordinates into chess notation. */
 	private static String convertPosition(int x, int y)
 	{
 		String row ="";
@@ -60,44 +64,63 @@ public class NCPosition
 		return (col + row);
 	}
 	
-	public NCPosition(int x, int y)
+	/* constructor */
+	public NCSpace(int x, int y)
 	{
 		// TODO: validation for x, y
-		this.myPos = NCPosition.convertPosition(x, y);
+		this.myPos = NCSpace.convertPosition(x, y);
 		this.isFree = true;
 		this.myPiece = null;
 	}
 	
+	/* returns the row of the space */
+	public int getRow()
+	{
+		return this.myRow;
+	}
+	
+	/* returns the column of the space */
+	public int getCol()
+	{
+		return this.myCol;
+	}
+	
+	/* returns the position of the space in chess notation */
 	public String getPosition()
 	{
 		return this.myPos;
 	}
 	
+	/* tells the caller if the space is free */
 	public boolean isFree()
 	{
 		return this.isFree;
 	}
 	
+	/* puts a piece on the space */
 	public void addPiece(iNCPiece piece)
 	{
 		this.myPiece = piece;
 		this.isFree = false;
 	}
 	
+	/* removes a piece from the space */
 	public void removePiece()
 	{
 		this.myPiece = null;
 		this.isFree = true;
 	}
 	
+	/* get the piece that is on the space */
 	public iNCPiece getPiece()
 	{
 		return this.myPiece;
 	}
 	
+	/* toString() method */
 	public String toString()
 	{
-		return (this.myPos + "- " + this.myPiece.toString());
+		return (this.myPos + " - " + this.myPiece.toString());
 	}
 	
 }

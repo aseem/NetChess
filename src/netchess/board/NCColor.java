@@ -1,8 +1,8 @@
-package netchess.pieces;
+package netchess.board;
 
-public enum NCPieceType 
+public enum NCColor 
 {
-	PAWN, ROOK, KNIGHT, BISHOP, QUEEN, KING;
+	BLACK, WHITE;
 	
 	@Override public String toString()
 	{

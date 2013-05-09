@@ -1,18 +1,20 @@
-package netchess.pieces;
+package netchess.board.pieces;
 
-import netchess.NCPosition;
 import netchess.board.NCBoard;
+import netchess.board.NCColor;
+import netchess.board.NCSpace;
+
 
 public class NCKing extends NCPiece
 {
-	public NCKing(NCColor color, NCPosition pos)
+	public NCKing(NCColor color, NCSpace pos)
 	{
 		super(color, pos);
 		this.myType = NCPieceType.KING;
 	}
 	
 	@Override
-	public boolean isValidMove(NCPosition pos, NCBoard board)
+	public boolean isValidMove(NCSpace pos, NCBoard board)
 	{
 		return true;
 	}

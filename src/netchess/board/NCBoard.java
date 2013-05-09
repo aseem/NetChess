@@ -1,21 +1,19 @@
 package netchess.board;
 
-import netchess.NCPosition;
-import netchess.pieces.*;
+import netchess.board.pieces.NCPieceType;
+import netchess.board.pieces.iNCPiece;
+
 
 public class NCBoard 
 {
 	private final int DEFAULT_SIZE = 8;
-	private NCPosition[][] myBoard;
-	private boolean isInCheck;
-	private boolean isInCheckMate;
+	private NCSpace[][] myBoard;
+
 	
-	// constructor
+	/* public constructor */
 	public NCBoard()
 	{
-		this.myBoard = new NCPosition[DEFAULT_SIZE][DEFAULT_SIZE];
-		this.isInCheck = false;
-		this.isInCheck = false;
+		this.myBoard = new NCSpace[DEFAULT_SIZE][DEFAULT_SIZE];
 		this.init();
 	}
 	
@@ -27,30 +25,43 @@ public class NCBoard
 		
 		for (i = 0; i < DEFAULT_SIZE; i++)
 			for (i = 0; i < DEFAULT_SIZE; i++)
-				myBoard[i][j] = new NCPosition(i,j);
+				myBoard[i][j] = new NCSpace(i,j);
 	}
 	
-	public iNCPiece getPiece(NCPosition pos)
+	/* returns the space at the given coordinates */
+	public NCSpace getSpace(int row, int col)
+	{
+		if (row < DEFAULT_SIZE && col < DEFAULT_SIZE &&
+				row >= 0 && col >= 0)
+		{
+			return (this.myBoard[row][col]);
+		}
+		else
+			return null;
+	}
+	
+	/* returns the piece at the given position */
+	public iNCPiece getPiece(NCSpace pos)
 	{
 		return null;
 	}
 	
-	public boolean addPiece(NCPieceType piece, NCColor color, NCPosition pos)
+	/* places a piece on the provided space */
+	public boolean addPiece(NCPieceType piece, NCColor color, NCSpace pos)
 	{
 		return true;
 	}
 	
-	public boolean removePiece(iNCPiece piece)
+	/* removes a piece from the provided space */
+	public boolean removePiece(NCSpace pos)
 	{
 		return true;
 	}
 	
-	public boolean removePiece(NCPosition pos)
-	{
-		return true;
-	}
-	
-	public boolean movePiece(iNCPiece piece, NCPosition newPos)
+	/* moves a piece from one space to another
+	 * validates that the move is legal 
+	 */
+	public boolean movePiece(NCSpace oldPos, NCSpace newPos)
 	{
 		return true;
 	}
